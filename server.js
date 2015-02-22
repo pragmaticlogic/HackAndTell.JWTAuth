@@ -73,7 +73,9 @@ app.post('/token', function(req, res) {
   });
 });
 
-app.listen(8080);
+var server = app.listen(8080, function() {
+  console.log('Server listens on port ', server.address().port);
+});
 
 
 
