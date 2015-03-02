@@ -6,7 +6,7 @@ var express = require('express'),
     jwt = require('jwt-simple'),
     moment = require('moment'),
     _ = require('lodash'),
-    cors = require('cors'),
+    //cors = require('cors'),
     app = express();
 
 app.use(bodyParser.json());
