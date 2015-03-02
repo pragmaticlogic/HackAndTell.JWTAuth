@@ -20,7 +20,14 @@ app.use(function (req, res, next) {
 });
 
 
-var db = mongoose.connect('mongodb://127.0.0.1:27017/jwtauth');
+//var db = mongoose.connect('mongodb://127.0.0.1:27017/jwtauth');
+
+var db = mongoose.connect(process.env.DB);
+var connection = db.connection;
+
+connection.once('open', function() {  
+  console.log('connect to database successfully ', process.env.DB);  
+});
 
 app.get('/', function(req, res) {
   res.send('app is running');  
