@@ -80,7 +80,7 @@ app.post('/token', function(req, res) {
   });
 });
 
-var server = app.listen(8080, function() {
+var server = app.listen(process.env.PORT, function() {
   console.log('Server listens on port ', server.address().port);
 });
 
